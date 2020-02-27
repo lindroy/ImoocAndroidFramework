@@ -8,21 +8,27 @@
     tools:context=".MainActivity">
 
     <Button
-        android:text="不用框架实现"
         android:id="@+id/btnNormal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="不用框架实现" />
 
 
     <Button
-        android:text="MVC框架实现"
         android:id="@+id/btnMVC"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="MVC框架实现" />
 
     <Button
-        android:text="MVP框架实现"
         android:id="@+id/btnMVP"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="MVP框架实现" />
+
+    <Button
+        android:id="@+id/btnMVVM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MVVM框架实现" />
 </LinearLayout>

@@ -11,12 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".mvvm.MVVMActivity"
+            android:label="MVVM框架"></activity>
         <activity android:name=".databinding.DemoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".mvp.MVPActivity"
@@ -27,10 +26,12 @@
         <activity
             android:name=".normal.NormalActivity"
             android:label="不使用框架" />
-        <activity
-            android:name=".MainActivity"
-            android:label="目录">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
