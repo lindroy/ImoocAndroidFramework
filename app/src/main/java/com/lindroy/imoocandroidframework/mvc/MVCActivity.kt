@@ -1,20 +1,21 @@
-package com.lindroy.imoocandroidframework
+package com.lindroy.imoocandroidframework.mvc
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.lindroy.imoocandroidframework.R
 import com.lindroy.imoocandroidframework.bean.Account
 import com.lindroy.imoocandroidframework.interfaces.NetworkCallback
 import kotlinx.android.synthetic.main.activity_normal.*
-import java.util.*
-
 
 /**
  * @author Lin
  * @date 2020/2/27
- * @function 不使用框架实现查询用户信息的功能
+ * @function MVC框架实现查询用户信息的功能
  * @Description
  */
-class NormalActivity : AppCompatActivity() {
+class MVCActivity : AppCompatActivity() {
+
+    private val mvcModel by lazy { MVCModel() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,8 @@ class NormalActivity : AppCompatActivity() {
 
     private fun initOnClick() {
         btnGet.setOnClickListener {
-            getAccountInfo(etUserName.text.toString(),object :NetworkCallback{
+            //通知MVCModel去获取数据
+            mvcModel.getAccountInfo(etUserName.text.toString(),object : NetworkCallback {
                 override fun onFailed() {
                     showFailedPage()
                 }
@@ -32,12 +34,9 @@ class NormalActivity : AppCompatActivity() {
                 override fun onSuccess(account: Account) {
                     showSuccessPage(account)
                 }
-
             })
         }
-
     }
-
     /**
      * 显示查询成功的页面
      */
@@ -49,16 +48,5 @@ class NormalActivity : AppCompatActivity() {
      */
     private fun showFailedPage(){
         tvResult.text = "获取用户信息失败"
-    }
-
-    /**
-     * 根据输入的用户名查询用户信息
-     * 使用随机布尔值模拟网络请求
-     */
-    private fun getAccountInfo(name: String, callback: NetworkCallback) {
-        when (Random().nextBoolean()) {
-            true -> callback.onSuccess(Account(name, 1))
-            false -> callback.onFailed()
-        }
     }
 }
