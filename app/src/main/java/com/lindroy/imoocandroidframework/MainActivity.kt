@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.lindroy.imoocandroidframework.mvc.MVCActivity
+import com.lindroy.imoocandroidframework.mvp.MVPActivity
 import com.lindroy.imoocandroidframework.normal.NormalActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         }
         btnMVC.setOnClickListener {
             startActivity(Intent(this, MVCActivity::class.java))
+        }
+        btnMVP.setOnClickListener {
+            startActivity(Intent(this, MVPActivity::class.java))
         }
     }
 
