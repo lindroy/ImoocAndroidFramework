@@ -26,7 +26,7 @@ class MVCActivity : AppCompatActivity() {
     private fun initOnClick() {
         btnGet.setOnClickListener {
             //通知MVCModel去获取数据
-            mvcModel.getAccountInfo(etUserName.text.toString(),object : NetworkCallback {
+            mvcModel.getAccountInfo(getUserInput(),object : NetworkCallback {
                 override fun onFailed() {
                     showFailedPage()
                 }
@@ -37,14 +37,20 @@ class MVCActivity : AppCompatActivity() {
             })
         }
     }
+
     /**
-     * 显示查询成功的页面
+     * 获取用户输入的账户名
+     */
+    private fun getUserInput() = etUserName.text.toString()
+
+    /**
+     * 展示查询成功的页面
      */
     private fun showSuccessPage(account: Account){
         tvResult.text = "用户名称：${account.name}，等级：${account.level}"
     }
     /**
-     * 显示查询失败的页面
+     * 展示查询失败的页面
      */
     private fun showFailedPage(){
         tvResult.text = "获取用户信息失败"
