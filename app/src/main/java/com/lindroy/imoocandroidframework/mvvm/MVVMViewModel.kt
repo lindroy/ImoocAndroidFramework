@@ -44,5 +44,4 @@ class MVVMViewModel(private val application: Application) : BaseObservable() {
             }
         })
     }
-
 }

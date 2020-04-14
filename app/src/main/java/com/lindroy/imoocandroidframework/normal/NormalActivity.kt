@@ -24,6 +24,7 @@ class NormalActivity : AppCompatActivity() {
     }
 
     private fun initOnClick() {
+        //点击查询账号信息
         btnGet.setOnClickListener {
             getAccountInfo(getUserInput(),object :NetworkCallback{
                 override fun onFailed() {
@@ -33,7 +34,6 @@ class NormalActivity : AppCompatActivity() {
                 override fun onSuccess(account: Account) {
                     showSuccessPage(account)
                 }
-
             })
         }
 

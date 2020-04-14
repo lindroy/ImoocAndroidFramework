@@ -3,11 +3,9 @@ package com.lindroy.imoocandroidframework.bean
 /**
  * @author Lin
  * @date 2020/2/27
- * @function 用户信息实体类
+ * @function 账号信息实体类
  */
-data class Account(val name: String,var level: Int){
-
-}
+data class Account(val name: String,var level: Int)
 
 
 //Kotlin如何添加notifyPropertyChanged，实现属性改变时刷新数据呢？

@@ -37,6 +37,4 @@ class MVPActivity : AppCompatActivity(), IMVPView {
     override fun showFailedPage() {
         tvResult.text = "获取用户信息失败"
     }
-
-
 }

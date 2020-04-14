@@ -9,7 +9,6 @@ import com.lindroy.imoocandroidframework.interfaces.NetworkCallback
  * @function MVP模式-Presenter层
  */
 class MVPPresenter(private val view: IMVPView) {
-
     /**
      * 持有Model层的引用，用于向View层传递数据
      */
@@ -30,5 +29,4 @@ class MVPPresenter(private val view: IMVPView) {
 
         })
     }
-
 }
